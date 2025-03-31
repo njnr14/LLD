@@ -1,0 +1,74 @@
+design and implement a basic seat booking system for a single movie screen with the following functionalities:
+
+View Available Seats → Users should be able to see available seats for a show.
+
+Book a Seat → Users should be able to book a seat if available.
+
+Cancel a Booking → Users should be able to cancel a previously booked seat.
+
+Show Booked Seats → Users should be able to check which seats are booked.
+
+
+single screen 
+shows seats
+
+timings
+
+p shows 
+
+user can choose 
+
+eqaul price
+
+cancellation
+
+seat no confirmation
+
+
+
+
+4:50
+
+
+classes:- 
+
+
+user
+uid
+uName
+mybooking<>
+
+
+show
+show name 
+show id
+
+
+
+
+
+
+
+
+system
+show
+vector<bool> seat;
+map<userId , seatsInd>
+
+
+Good things :- 
+
+Functioning code.
+Decent objects. 
+
+Improvements  :-
+
+Intro was not clear
+
+Questions were vague. Shorten the user STORY
+
+Function names = vacantSeats (//better would be displayVacantSeats, updateBooking?)
+
+Error handling?
+
+No understanding of concurrency.
