@@ -1,0 +1,32 @@
+Task:-
+type : 
+status:
+id:
+
+createTask()
+updateStatus()
+
+
+
+
+user:
+id:
+name:
+vector<int> Task
+Sprint 
+
+createUser
+
+
+
+
+
+Sprints:-
+id:
+user:
+task:
+deadline:-
+
+
+
+for coding simplicity declareing class varible in public to save time in  creating  getter and setter function
