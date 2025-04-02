@@ -1,0 +1,158 @@
+Design a polling system like whatsapp. 
+
+The system should have the following functionality: -
+
+Core Functionalities (MUST HAVE - MVP)
+
+Create a Poll
+
+- A user can create a poll inside a chat with a question, options, and created_by.
+
+- Each option should have a unique option_id and text.
+
+- Polls should have a poll_id and belong to a specific chat_id.
+
+Vote on a Poll (Single Selection Only)
+
+- A user can select one option from the poll.
+
+- If they vote again, their previous vote should be replaced.
+
+View Poll Results
+
+- Show the number of votes per option.
+
+- Display the percentage of total votes per option.
+
+List All Polls in a Chat
+
+- Fetch all polls for a specific chat, showing status (active or closed).
+
+Prevent Duplicate Voting
+
+- Ensure a user can’t vote twice unless they change their vote.
+
+Phase 2: Enhancements (NICE TO HAVE)
+
+Poll Closing Time
+
+- Allow the creator to set a closing time after which voting is disabled.
+
+Anonymous Polls
+
+- Allow the creator to hide who voted for what.
+
+Multiple Selection Polls
+
+- Allow the poll creator to enable multiple-choice voting.
+
+
+
+Chat:
+id
+grpName
+users
+polls
+
+
+
+
+Poll:
+id
+createdBy
+title
+options
+optionId , vote
+userId , optionId
+count options per user
+
+
+
+
+Options:
+id
+option Title
+
+
+
+
+
+User:
+id
+name
+
+
+userManager:
+User id , user
+
+PollManger:
+pollId -> userId;
+userId -> pollId;
+
+pollcreation
+Display Poll
+
+
+poll creation
+
+System:
+userManager
+Pollmanager
+
+
+
+
+
+
+
+
+
+Assess the following solution for the given low level design problem. Identify the the good part of the design, areas of improvement and finally give an expert level solution to the problem which applies all the design principles like SOLID, explaining each and every design decision
+
+Problem : - Design a polling system like whatsapp. 
+
+The system should have the following functionality: -
+
+Core Functionalities (MUST HAVE - MVP)
+
+Create a Poll
+
+- A user can create a poll inside a chat with a question, options, and created_by.
+
+- Each option should have a unique option_id and text.
+
+- Polls should have a poll_id and belong to a specific chat_id.
+
+Vote on a Poll (Single Selection Only)
+
+- A user can select one option from the poll.
+
+- If they vote again, their previous vote should be replaced.
+
+View Poll Results
+
+- Show the number of votes per option.
+
+- Display the percentage of total votes per option.
+
+List All Polls in a Chat
+
+- Fetch all polls for a specific chat, showing status (active or closed).
+
+Prevent Duplicate Voting
+
+- Ensure a user can’t vote twice unless they change their vote.
+
+Phase 2: Enhancements (NICE TO HAVE)
+
+Poll Closing Time
+
+- Allow the creator to set a closing time after which voting is disabled.
+
+Anonymous Polls
+
+- Allow the creator to hide who voted for what.
+
+Multiple Selection Polls
+
+- Allow the poll creator to enable multiple-choice voting.
