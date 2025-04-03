@@ -38,6 +38,7 @@ class User{
 
     void DisplayUser(){}
 };
+
 int User::Uuid = 1;
 
 class Expense{

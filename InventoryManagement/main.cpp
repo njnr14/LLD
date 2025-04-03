@@ -114,9 +114,10 @@ public:
 class InventoryManagement {
 private:
     unordered_map<string, Category> categoryMap; // categoryType -> Category object
+    static InventoryManagement *manager;
 
-public:
     InventoryManagement() {}
+public:
 
     bool addCategory(const string& categoryName) {
         if (categoryMap.find(categoryName) != categoryMap.end()) {
@@ -174,15 +175,22 @@ public:
             it.second.displayAllProduct();
         }
     }
+
+    static  InventoryManagement* getInstance(){
+        if(!manager){
+            manager  = new InventoryManagement();
+        }
+        return manager;
+    }
 };
 
 // Main function
 int main() {
-    InventoryManagement inventory;
+    InventoryManagement *inventory= InventoryManagement::getInstance();
 
     // Creating categories
-    inventory.addCategory("Electronics");
-    inventory.addCategory("Grocery");
+    inventory->addCategory("Electronics");
+    inventory->addCategory("Grocery");
 
     // Adding products
     Product laptop("Laptop", 10, "Electronics");
@@ -190,32 +198,31 @@ int main() {
     Product rice("Rice", 50, "Grocery");
     Product football("Football", 50, "sports");
 
-    inventory.addProduct(laptop);
+    inventory->addProduct(laptop);
     cout<<endl;
-    inventory.addProduct(phone);
+    inventory->addProduct(phone);
     cout<<endl;
-    inventory.addProduct(rice);
+    inventory->addProduct(rice);
     cout<<endl;
-    inventory.addProduct(football);
+    inventory->addProduct(football);
     
     // Display all products
     cout<<endl;
-    inventory.displayCategoriesWithProduct();
+    inventory->displayCategoriesWithProduct();
     cout<<endl;
     
     // Updating quantity
-    inventory.updateProduct(phone, 5, true);
+    inventory->updateProduct(phone, 5, true);
     cout<<endl;
-    inventory.updateProduct(rice, 60, false);
+    inventory->updateProduct(rice, 60, false);
     cout<<endl;
     cout<<endl;
     
     // Deleting a product
-    inventory.deleteProduct(phone);
+    inventory->deleteProduct(phone);
     cout<<endl;
     
-    // Display updated inventory
-    inventory.displayCategoriesWithProduct();
+    // Display updated inventory->    inventory->displayCategoriesWithProduct();
     cout<<endl;
 
     return 0;

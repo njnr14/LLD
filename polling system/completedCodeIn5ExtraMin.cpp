@@ -14,7 +14,6 @@ class User{
 
 int User::Uuid = 1;
 
-
 class UserManager{
     private:
     unordered_map<int, User*> AllUser; //(userID -> User)
@@ -33,10 +32,6 @@ class UserManager{
     }
 };
 
-
-
-
-
 class Option{
     public:
     static int Ouid;
@@ -50,12 +45,12 @@ class Option{
 };
 int Option::Ouid =1;
 
-
 class Poll{
     public:
     static int Puid;
     int id;
     string title;
+    Chat* obj;
     User* createdBy;
     unordered_map<int,int> optionsAndVote ; //optionsID -> vote
     unordered_map<int,Option*> Choices ; //optionsID -> Option
@@ -117,7 +112,6 @@ class PollManager{
 
 int Poll::Puid =1;
 
-
 class Chat{
     public:
     static int Cuid;
@@ -161,8 +155,20 @@ class ChatManager{
 
 
 class System{
+
+    private:
+    System(){}
+
     public:
-    
+    static System* SysManger;
+    static System* getSystem(){
+        if(SysManger==nullptr){
+            SysManger = new System();
+        }
+
+        return SysManger;
+    }
+
     UserManager UserManager;
     ChatManager ChatManager;
     PollManager PollManager;
@@ -206,24 +212,26 @@ class System{
 
 };
 
+System* System::SysManger = nullptr;
+
 int main() {
-    System sys;
+    System *sys = System::getSystem();
 
     // Step 1: Create Users
-    sys.CreateUser("Alice");
-    sys.CreateUser("Bob");
-    sys.CreateUser("Charlie");
+    sys->CreateUser("Alice");
+    sys->CreateUser("Bob");
+    sys->CreateUser("Charlie");
 
     // Get users
-    User* alice = sys.getUser(1);
-    User* bob = sys.getUser(2);
-    User* charlie = sys.getUser(3);
+    User* alice = sys->getUser(1);
+    User* bob = sys->getUser(2);
+    User* charlie = sys->getUser(3);
 
     // Step 2: Create a Chat Group
-    sys.createChat("Tech Discussion");
+    sys->createChat("Tech Discussion");
 
     // Get chat group
-    Chat* chat = sys.getChatGrp(1);
+    Chat* chat = sys->getChatGrp(1);
 
     // Add users to chat group
     chat->addUserInChat(alice);
@@ -232,18 +240,18 @@ int main() {
 
     // Step 3: Create a Poll
     vector<string> options = {"Python", "C++", "JavaScript"};
-    sys.createPoll("Which programming language do you prefer?", 1, options); // Alice creates poll
+    sys->createPoll("Which programming language do you prefer?", 1, options); // Alice creates poll
 
     // Get the poll
-    Poll* poll = sys.PollManager.getPoll(1);
+    Poll* poll = sys->PollManager.getPoll(1);
 
     // Step 4: Display Poll Details
     poll->display();
 
     // Step 5: Users Vote in Poll
-    sys.addVote(1, 1, 1, 1); // Alice votes for Python
-    sys.addVote(2, 1, 1, 2); // Bob votes for C++
-    sys.addVote(3, 1, 1, 1); // Charlie votes for Python
+    sys->addVote(1, 1, 1, 1); // Alice votes for Python
+    sys->addVote(2, 1, 1, 2); // Bob votes for C++
+    sys->addVote(3, 1, 1, 1); // Charlie votes for Python
 
     // Step 6: Display Updated Poll Results
     cout << "\nUpdated Poll Results:\n";

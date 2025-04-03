@@ -30,3 +30,22 @@ deadline:-
 
 
 for coding simplicity declareing class varible in public to save time in  creating  getter and setter function
+
+
+Assess the following solution for the given low level design problem. Identify the the good part of the design, areas of improvement and finally give an expert level solution to the problem which applies all the design principles like SOLID, explaining each and every design decision
+
+Problem : - [09:03, 1/4/2025] Rishabh Bhaiya: Design a system like Jira. It should have the following functionalities :
+
+1. User should be able to create Task of type Story, Feature, Bugs. Each can have their own status.
+2. Should be able to change the status of any task.
+3. User should be able to create any sprint. Should be able to add any task to sprint and remove from it.
+   4.User should be able to print
+- Delayed task
+- Sprint details
+- Tasks assigned to the user
+5. Stories can further have sub-tasks.
+Priority of the functionality is in the order in which they appear.
+
+Solution: -
+
+Your full solution

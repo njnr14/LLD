@@ -1,0 +1,116 @@
+Ride-Sharing App
+
+1. User & Driver Management
+- Users & drivers can register and log in.
+- Drivers can mark themselves available/unavailable.
+- Users & drivers can update their current location.
+
+2. Ride Request & Matching
+- A user can request a ride with a pickup and drop-off location.
+- The system finds the nearest available driver.
+- The driver can accept or reject the ride request.
+
+3. Ride Tracking & Completion
+- Once a ride is accepted, it is marked as "In Progress".
+- The driver can complete the ride, updating the status to "Completed".
+
+4. Basic Pricing System
+- Calculate fare based on distance.
+- Show estimated fare before confirming a ride.
+
+
+
+Nice-to-Have Functionalities (Extensions, if time allows)
+1. Payment & Billing
+- Users can pay via wallet, card, or cash.
+- Implement ride cancellation charges if a ride is canceled late.
+
+2. Ratings & Reviews
+- After a ride, both users and drivers can rate each other.
+- Store and display an average rating for drivers.
+
+3. Real-Time Features
+- Users can see driver's live location on a map.
+- Drivers receive ride requests via push notifications.
+
+4.  Admin Controls
+- Admin can ban users or drivers for violations.
+🔹-Monitor system performance & fraud detection.
+
+
+
+User :-
+id
+name
+Location
+password
+
+
+
+Driver:-
+id
+name
+password
+Location
+Status: DriverStatus
+RideRequest
+
+
+
+
+
+
+UserManager:-
+AllUser
+user authentication
+user Updates
+
+
+
+
+DriverStatus : {available , notAvailable
+}
+
+
+
+
+
+
+DriverManager:-
+AllDriver
+Driver authentication
+Driver Status Change
+
+
+Assuming 1-dimension Space/geographical location
+
+
+RideStatus: Searching , Inprogress , Completed
+Driver changes Status of Ride
+
+
+
+Ride:-
+Ruid:
+UserID:
+DriverID:
+PickUp:
+Destination:
+RideStatus:
+Expected Amount: 
+
+
+A user can request a ride with a pickup and drop-off location.
+
+
+Algo For ride searching
+
+
+user/driver update Location
+
+
+
+
+
+Pricing System:
+Based on distance
