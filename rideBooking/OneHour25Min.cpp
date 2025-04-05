@@ -12,7 +12,7 @@ class User{
     int Location;
 
 
-    User(string name, string password) : name(name) ,id(Uuid++) , password(password) {};
+    User(string email ,string name, string password) : email(email) ,name(name) ,id(Uuid++) , password(password) {};
 
 
 };
@@ -191,7 +191,7 @@ class Ride{
     RideStatus Status;
 
 
-    Ride(int UserId , int PickUp ,int Destination):id(Ruid++) ,UserId(UserId) ,PickUP(PickUP) , Destination(Destination) , expectedFare(abs(PickUP - Destination)), Status(SEARCHING){}
+    Ride(string Email , int PickUp ,int Destination):id(Ruid++)  ,PickUP(PickUP) , Destination(Destination) , expectedFare(abs(PickUP - Destination)), Status(SEARCHING){}
     
 };
 

@@ -1,0 +1,92 @@
+Design a simplified version of a social media feed system (like Instagram or Facebook), where users can post content, follow other users, and view a personalized feed.
+
+Your task is to implement the core functionality of such a system that includes users, posts, and a feed sorted by recency (latest posts first).
+
+1. User Management
+Create users with a name and unique ID.
+
+Users can follow or unfollow other users.
+
+Each user should maintain a list of who they follow.
+
+
+2. Post Management
+Users can create posts (just a string message or caption).
+
+Each post has a unique post ID, timestamp, and creator.
+
+
+
+3. Feed Generation
+A user can view their feed which contains:
+
+Posts created by the users they follow.
+
+Posts sorted in reverse chronological order (newest first).
+
+Limit the number of posts in the feed to the most recent k (say 10) posts.
+
+Nice-to-Have Functionalities (for discussion or time permitting)
+1. Like Feature
+Users can like a post.
+
+Track number of likes per post.
+
+Prevent the same user from liking a post multiple times.
+
+2. Comment Feature
+Users can comment on posts.
+
+Store a list of comments per post.
+
+3. Hashtag Search
+Allow tagging posts with hashtags (e.g., #vacation, #food).
+
+Users can search posts using hashtags.
+
+4. Post Deletion
+A user can delete their own posts.
+
+Deleted posts should disappear from the feed.
+
+
+User:
+id, name ,
+Following Userlist
+created Post
+
+
+
+UserController:
+Allusers
+
+UserCreation
+getting UserDetails
+Follow OtherUser
+unFollow OtherUser
+
+
+
+Post:
+id 
+section
+timestamp
+CreatedBy user;
+
+
+
+Post Manager:
+All Post
+
+Post UserCreation
+PostModification
+
+Getting Post;
+
+
+
+
+FeedController:
+Feed generation Algorithm which return Feed
+Getting the feed
+
