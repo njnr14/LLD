@@ -20,8 +20,10 @@ class User{
 
 
 class UserController{
+    
     unordered_map<int,shared_ptr<User>> Allusers;
     unordered_set<string> userSet;
+
     public:
     void createUser(string email ,string name){
         if(userSet.find(email)!=userSet.end()){
@@ -35,10 +37,12 @@ class UserController{
         cout<<"User created \n";
         
     }
+
     shared_ptr<User> getUser(int id){
         if(Allusers.find(id)==Allusers.end())return nullptr;
         return Allusers[id];
     }
+
     bool followUser(shared_ptr<User>user , int userIdToFollow){
         if(Allusers.find(userIdToFollow)==Allusers.end() || user==nullptr){
             cout<<"User do not exists\n"<<endl;
@@ -47,6 +51,7 @@ class UserController{
         user->Following.insert(userIdToFollow);
         return true;
     };
+
     // bool unfollowUser(shared_ptr<User> , int userIdToFollow){
 
     // };
