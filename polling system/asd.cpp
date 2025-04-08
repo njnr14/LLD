@@ -138,7 +138,7 @@ public:
     
     static shared_ptr<System> getSystem() {
         if (!SysManager) {
-            SysManager = make_unique<System>();
+            SysManager = shared_ptr<System>(new System());
         }
         return SysManager;
     }
